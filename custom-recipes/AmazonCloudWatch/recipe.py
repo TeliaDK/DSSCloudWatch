@@ -1,6 +1,3 @@
-# Code for custom code recipe acf_amazon_cloud_watch (imported from a Python recipe) 
-# J.L.G.
-
 # import the classes for accessing DSS objects from the recipe
 import dataiku
 # Import the helpers for custom recipes
