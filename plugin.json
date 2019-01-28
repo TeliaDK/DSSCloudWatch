@@ -1,4 +1,4 @@
-// This file is the descriptor for the DSS Plugin acf_AmazonCloudWatch
+// This file is the descriptor for the DSS Plugin AmazonCloudWatch
 {
     // The identifier of the plugin.
     // This must be globally unique, and only contain A-Za-z0-9_-

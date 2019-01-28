@@ -97,8 +97,8 @@ def process_dataset (dataset_df, token_value):
         except Exception as ex:
             print(ex)
     dataset_new_token = datetime.datetime.now().isoformat()
-    print('[ACF_CLOUDWATCH plugin] - ' + str(count) + ' rows successfully processed. Token value: ' + dataset_new_token)
-    print('[ACF_CLOUDWATCH plugin] - %d errors' % errors)
+    print('[CLOUDWATCH plugin] - ' + str(count) + ' rows successfully processed. Token value: ' + dataset_new_token)
+    print('[CLOUDWATCH plugin] - %d errors' % errors)
     return (dataset_new_token, count, errors)
 
 #############################################################

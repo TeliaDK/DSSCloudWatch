@@ -1,9 +1,9 @@
-// This file is the descriptor for the Custom code recipe acf_amazon_cloud_watch
+// This file is the descriptor for the Custom code recipe amazon_cloud_watch
 {
     // Meta data for display purposes
     "meta" : {
-        "label" : "ACFDSSCloudWatch",
-        "description" : "Plugin designed by ACF to push custom metric data from Dataiku to Amazon CloudWatch, using CloudWatch's API and written in Python by JL.",
+        "label" : "DSSCloudWatch",
+        "description" : "Plugin designed to push custom metric data from Dataiku to Amazon CloudWatch, using CloudWatch's API",
         "icon" : "icon-dashboard"
     },
 
