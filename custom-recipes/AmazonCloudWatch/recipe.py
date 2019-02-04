@@ -52,6 +52,8 @@ def put_metric_to_cloudwatch(row_data):
             },
         ]
     )
+    if response['ResponseMetadata']['HTTPStatusCode'] != 200:
+        raise Exception('Error sending metric', str(response))
 
 ##############################################
 # Function to get token value 
