@@ -11,6 +11,7 @@ feedback_output_dataset = [dataiku.Dataset(name) for name in output_feedbacks]
 # Retrieve parameter values from the of map of parameters
 access_key = get_recipe_config()['access_key']
 secret_key = get_recipe_config()['secret_key']
+region = get_recipe_config()['region']
 
 ##############################################
 # Recipe
@@ -24,7 +25,7 @@ import ast
 
 # Initialization of boto3's cloudwatch object to push data to Amazon CloudWatch
 cloudwatch = boto3.client('cloudwatch', 
-                          region_name='eu-west-1', # Change the Amazon CloudWatch Location when required.
+                          region_name=region, # Change the Amazon CloudWatch Location when required.
                           aws_access_key_id=access_key,
                           aws_secret_access_key=secret_key)
 

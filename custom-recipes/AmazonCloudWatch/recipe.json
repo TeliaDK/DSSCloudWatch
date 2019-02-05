@@ -42,6 +42,13 @@
             "type": "PASSWORD",
             "description":"",
             "mandatory" : true
+        },
+        {
+            "name": "region",
+            "label" : "Amazon's region",
+            "type": "STRING",
+            "description":"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html",
+            "mandatory" : true
         }
     ],
 
