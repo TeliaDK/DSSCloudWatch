@@ -6,7 +6,7 @@ Automatically push your metrics from Dataiku's Science Studio to Amazon's CloudW
 Get your metrics in AWS CloudWatch following this simple steps:
  * Create your metric dataset or datasets.
  * Pass DSSCloudWatch your metric datasets and create an output dataset where log information will be written.
- * Configure your `mazon User's Access Key` and `mazon User's Access Password` in the settings section. 
+ * Configure your `Amazon User's Access Key` and `Amazon User's Access Password` in the settings section. 
  * Automate dataset buildings with an scenario
 
 Check your metrics at CloudWatch
