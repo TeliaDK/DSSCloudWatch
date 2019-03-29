@@ -99,8 +99,6 @@ def process_dataset (dataset_df, token_value):
             count += 1
         except Exception as ex:
             print(ex)
-    print('[CLOUDWATCH plugin] - ' + str(count) + ' rows successfully processed. Token value: ' + dataset_new_token)
-    print('[CLOUDWATCH plugin] - %d errors' % errors)
     return (count, errors)
 
 #############################################################
@@ -162,8 +160,9 @@ def process_input(dsname, feedback_df):
         df = build_dimensions(df)
         count, errors = process_dataset(df, token_value)
     token_value = datetime.datetime.now().isoformat()
-    
     output_feedback.append({ "key": dsname, "value": token_value, "count": count, "errors": errors })
+    print('[CLOUDWATCH plugin] - ' + str(count) + ' rows successfully processed. Token value: ' + token_value)
+    print('[CLOUDWATCH plugin] - %d errors' % errors)
     print('%s input processed correctly.' % dsname)
 
 
