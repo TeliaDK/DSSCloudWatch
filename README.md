@@ -14,7 +14,7 @@ Check your metrics at CloudWatch
 ### How to define your metrics
 DSSCloudWatch input datasets should follow this schema:
  * Namespace: string Main section where thise metrics reside
- * MatricName: string Metric's name
+ * MetricName: string Metric's name
  * MetricValue: [string, number] Metric's value
  * Timestamp: date Metric's timestamp
  * [Optional] MetricUnit: none,milliseconds,seconds,...
