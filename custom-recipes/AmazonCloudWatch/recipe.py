@@ -36,6 +36,7 @@ class row_content:
     metric_name = ""
     value = ""
     dimensions = ""
+    unit = 'None'
 
 ##############################################
 # Function to put metrics to CloudWatch 
@@ -49,7 +50,7 @@ def put_metric_to_cloudwatch(row_data):
                 'MetricName': row_data.metric_name,
                 'Dimensions': row_data.dimensions,
                 'Value': row_data.value,
-                'Unit': 'None'
+                'Unit': row_data.unit
             },
         ]
     )
@@ -83,13 +84,16 @@ def process_dataset (dataset_df, token_value):
     print('Processing columns: %s' % list(dataset_df.columns))
     count = 0
     errors = 0
-    row_data = row_content()    
+    row_data = row_content()  
+    hasUnit = "MetricUnit" in procesed_dataset_df.columns  
     for index, row in procesed_dataset_df.iterrows():
         # Manipulate dataset here, and call the put_metric_to_cloudwatch function for each row.
         row_data.namespace = row.Namespace
         row_data.timestamp = row.Timestamp
         row_data.metric_name = row.MetricName
         row_data.value = row.MetricValue
+        if hasUnit:
+            row_data.unit = row.MetricUnit
         try:
             row_data.dimensions = ast.literal_eval(row.MetricDimensions)
         except:
